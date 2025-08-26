@@ -14,17 +14,9 @@ void print_part(Part *p) {
 };
 
 int main() {
-  Part part1 = { 5280, "Disk drive", 10 };
-  Part part2 = { 9140, "Printer", 5 };
-  Part part3 = {
-    .number = 7529,
-    .name = "Floppy disk",
-    .on_hand = 100
-  };
-
-  print_part(&part1);
-  print_part(&part2);
-  print_part(&part3);
+  print_part(& (Part) { 5280, "Disk drive", 10 });
+  print_part(& (Part) { 9140, "Printer", 5 });
+  print_part(& (Part) { .number = 7529, .name = "Floppy disk", .on_hand = 100 });
 
   return 0;
 }
