@@ -1,4 +1,5 @@
 #define NAME_LEN 25
+#define LEN 3
 
 typedef struct {
   int number;
@@ -13,10 +14,19 @@ void print_part(Part *p) {
   printf("\n");
 };
 
+void print_inventory(Part inventory[LEN]) {
+  for (int i = 0; i < LEN; i++) {
+    print_part(&inventory[i]);
+  }
+}
+
 int main() {
-  print_part(& (Part) { 5280, "Disk drive", 10 });
-  print_part(& (Part) { 9140, "Printer", 5 });
-  print_part(& (Part) { .number = 7529, .name = "Floppy disk", .on_hand = 100 });
+  Part inventory[LEN];
+  inventory[0] = (Part) { 5280, "Disk drive", 10 };
+  inventory[1] = (Part) { 9140, "Printer", 5 };
+  inventory[2] = (Part) { .number = 7529,  .name = "Floppy disk", .on_hand = 100 };
+
+  print_inventory(inventory);
 
   return 0;
 }
