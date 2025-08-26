@@ -21,10 +21,11 @@ void print_inventory(Part inventory[LEN]) {
 }
 
 int main() {
-  Part inventory[LEN];
-  inventory[0] = (Part) { 5280, "Disk drive", 10 };
-  inventory[1] = (Part) { 9140, "Printer", 5 };
-  inventory[2] = (Part) { .number = 7529,  .name = "Floppy disk", .on_hand = 100 };
+  Part inventory[LEN] = {
+    { 5280, "Disk drive", 10 },
+    { 9140, "Printer", 5 },
+    { .number = 7529,  .name = "Floppy disk", .on_hand = 100 }
+  };
 
   print_inventory(inventory);
 
